@@ -1,0 +1,48 @@
+/* Global Styles & Theming - Black & Gold System */
+@import 'styles/mixins';
+
+:root {
+    /* Colors - Industrial Luxury Theme */
+    --color-primary: #CDAF5A;
+    /* Gold */
+    --color-primary-hover: #B59A4A;
+    /* Darker Gold */
+    --color-bg-main: #000000;
+    /* Deep Black */
+    --color-bg-secondary: #111111;
+    /* Dark Grey (for Sections) */
+    --color-bg-card: #1A1A1A;
+    /* Lighter Grey (for Cards) */
+    --color-text-main: #FFFFFF;
+    /* White */
+    --color-text-muted: #B0B0B0;
+    /* Grey Text */
+    --color-border: #333333;
+    /* Subtle Borders */
+
+    /* Spacing */
+    --container-width: 1320px;
+    --header-height: 80px;
+
+    /* Font Family */
+    --font-main: 'Cairo', sans-serif;
+}
+
+/* Typography Scaling */
+html {
+    font-size: 16px;
+
+    @include mobile {
+        font-size: 14px;
+        /* Scale down text slightly on mobile */
+    }
+}
+
+body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    font-family: var(--font-main);
+    margin: 0;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}

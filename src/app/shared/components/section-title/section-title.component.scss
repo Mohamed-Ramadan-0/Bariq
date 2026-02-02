@@ -1,0 +1,58 @@
+@import 'styles/mixins';
+
+.section-title-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &.center {
+        align-items: center;
+        text-align: center;
+    }
+
+    &.start {
+        align-items: flex-start;
+        text-align: left;
+
+        @include mobile {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &.end {
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+
+.title {
+    font-family: var(--font-main);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+
+    font-size: 3rem;
+    /* Desktop default */
+
+    @include mobile {
+        font-size: 1.8rem;
+    }
+}
+
+.subtitle {
+    font-family: var(--font-main);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 600px;
+    /* Readability limit */
+
+    font-size: 1.1rem;
+    /* Desktop default */
+
+    @include mobile {
+        font-size: 0.9rem;
+    }
+}
