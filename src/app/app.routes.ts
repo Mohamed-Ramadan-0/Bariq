@@ -6,8 +6,12 @@ export const routes: Routes = [
         path: '',
         component: MainLayoutComponent,
         children: [
-            // { path: '', component: HomeComponent }, // To be implemented
+            {
+                path: '',
+                loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
+            },
             // { path: 'services', component: ServicesComponent }, // To be implemented
+            // { path: 'portfolio', component: PortfolioComponent }, // To be implemented
         ]
     }
 ];

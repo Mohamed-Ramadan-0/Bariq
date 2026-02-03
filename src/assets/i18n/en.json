@@ -1,3 +1,50 @@
 {
-  "HELLO": "Hello Bariq"
+  "HELLO": "Hello Bariq",
+  "HERO": {
+    "TITLE": "Engineering Excellence in Every Detail",
+    "SUBTITLE": "Premium cladding, signage & facade solutions that transform your vision into reality",
+    "CTA": "Explore Our Work",
+    "CTA_CONTACT": "Contact Us"
+  },
+  "STATS": {
+    "TITLE": "Our Impact in Numbers"
+  },
+  "SERVICES": {
+    "TITLE": "Our Services",
+    "SUBTITLE": "Comprehensive solutions for modern architecture",
+    "LEARN_MORE": "Learn More"
+  },
+  "PROJECTS": {
+    "TITLE": "Featured Projects",
+    "SUBTITLE": "Discover our latest work",
+    "VIEW_ALL": "View All Projects",
+    "VIEW_PROJECT": "View Project"
+  },
+  "LEAD_MAGNET": {
+    "TITLE": "2026 Material Specs Guide",
+    "SUBTITLE": "Get exclusive access to our comprehensive guide on the latest fire-resistant materials and industry standards",
+    "PLACEHOLDER": "Enter your email",
+    "CTA": "Download Free Guide"
+  },
+  "CONTACT": {
+    "TITLE": "Get in Touch",
+    "SUBTITLE": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "FORM": {
+      "NAME": "Your Name",
+      "EMAIL": "Email Address",
+      "SUBJECT": "Subject",
+      "MESSAGE": "Your Message",
+      "SUBMIT": "Send Message"
+    },
+    "INFO": {
+      "TITLE": "Contact Information",
+      "PHONE_LABEL": "Phone",
+      "EMAIL_LABEL": "Email",
+      "ADDRESS_LABEL": "Address",
+      "PHONE_1": "+966 12 345 6789",
+      "PHONE_2": "+966 50 123 4567",
+      "EMAIL": "info@bariqarabia.com",
+      "ADDRESS": "King Fahd Road, Riyadh, Saudi Arabia"
+    }
+  }
 }

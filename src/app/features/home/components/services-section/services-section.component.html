@@ -1,0 +1,49 @@
+<section class="services-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">{{ 'SERVICES.TITLE' | translate }}</h2>
+            <p class="section-subtitle">{{ 'SERVICES.SUBTITLE' | translate }}</p>
+        </div>
+
+        <!-- Services List with Connecting Line -->
+        <div class="services-wrapper" #servicesContainer [class.visible]="isVisible">
+            <!-- Vertical Connecting Line -->
+            <div class="connecting-line"></div>
+
+            <!-- Service Cards -->
+            <div class="service-card" *ngFor="let service of services; let i = index; let odd = odd"
+                [class.reverse]="odd">
+
+                <!-- Text Content -->
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path [attr.d]="service.icon"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">{{ getTitle(service) }}</h3>
+                    <p class="service-desc">{{ getDescription(service) }}</p>
+                    <a [routerLink]="['/services', service.id]" class="service-link">
+                        {{ 'SERVICES.LEARN_MORE' | translate }}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Image -->
+                <div class="service-image">
+                    <app-img [path]="service.img" [alt]="getTitle(service)" [height]="400"
+                        containerClass="service-img"></app-img>
+                </div>
+
+                <!-- Node on the line -->
+                <div class="line-node"></div>
+            </div>
+        </div>
+    </div>
+</section>

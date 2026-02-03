@@ -1,0 +1,59 @@
+<section class="projects-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <div class="header-content">
+                <h2 class="section-title">{{ 'PROJECTS.TITLE' | translate }}</h2>
+                <p class="section-subtitle">{{ 'PROJECTS.SUBTITLE' | translate }}</p>
+            </div>
+            <a routerLink="/portfolio" class="view-all-btn">
+                {{ 'PROJECTS.VIEW_ALL' | translate }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Projects Carousel with CSS Scroll Snap -->
+        <div class="projects-carousel">
+            <div class="carousel-track">
+                <div class="project-card" *ngFor="let project of projects">
+                    <div class="project-image">
+                        <app-img [path]="project.img" [alt]="getClient(project)" [height]="450"
+                            containerClass="project-img"></app-img>
+
+                        <!-- Blueprint Overlay (appears on hover) -->
+                        <div class="blueprint-overlay">
+                            <div class="grid-pattern"></div>
+                            <div class="overlay-content">
+                                <span class="category">{{ project.category }}</span>
+                                <a [routerLink]="['/portfolio', project.id]" class="view-btn">
+                                    {{ 'PROJECTS.VIEW_PROJECT' | translate }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-client">{{ getClient(project) }}</h3>
+                        <span class="project-category">{{ project.category }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicators -->
+        <div class="scroll-hint">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span>Scroll</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </div>
+    </div>
+</section>

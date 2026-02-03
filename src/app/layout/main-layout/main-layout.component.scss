@@ -1,6 +1,13 @@
+// Main layout removes padding-top for homepage hero immersive effect
+// The hero section handles its own spacing
+
+:host {
+    display: block;
+}
+
 main {
     min-height: 100vh;
-    padding-top: var(--header-height);
     box-sizing: border-box;
-    /* Ensure padding doesn't affect width/height calculations unexpectedly if strictly sized */
+    // No padding-top - hero sections should handle their own spacing
+    // Other pages that need spacing can add it in their own component styles
 }
