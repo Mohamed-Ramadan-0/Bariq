@@ -85,6 +85,7 @@
 .input-wrapper {
     flex: 1;
     position: relative;
+    min-width: 0; // Prevent flex overflow
 
     .input-icon {
         position: absolute;
@@ -93,11 +94,15 @@
         transform: translateY(-50%);
         color: var(--color-text-muted);
         pointer-events: none;
+        z-index: 1;
     }
 
     input {
         width: 100%;
-        padding: 1rem 1rem 1rem 3rem;
+        // Using logical properties for automatic RTL support
+        padding-block: 1rem;
+        padding-inline-start: 3.5rem; // Space for icon
+        padding-inline-end: 1rem;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 4px;
@@ -105,10 +110,7 @@
         font-size: 1rem;
         font-family: inherit;
         transition: all 0.3s ease;
-
-        [dir="rtl"] & {
-            padding: 1rem 3rem 1rem 1rem;
-        }
+        box-sizing: border-box;
 
         &::placeholder {
             color: var(--color-text-muted);

@@ -33,7 +33,7 @@
                         <button class="lang-toggle" (click)="toggleLanguage()" aria-label="Toggle Language">
                             <span class="lang-option" [class.active]="currentLang === 'en'">EN</span>
                             <span class="lang-divider">|</span>
-                            <span class="lang-option" [class.active]="currentLang === 'ar'">ع</span>
+                            <span class="lang-option cairo-font-force" [class.active]="currentLang === 'ar'">ع</span>
                         </button>
                     </li>
                 </ul>
@@ -72,5 +72,12 @@
             <li><a routerLink="/blog" (click)="toggleMobileMenu()" routerLinkActive="active">Blog</a></li>
             <li><a routerLink="/contact" (click)="toggleMobileMenu()" routerLinkActive="active">Contact</a></li>
         </ul>
+
+        <!-- Mobile Language Toggle -->
+        <button class="mobile-lang-toggle" (click)="toggleLanguage()" aria-label="Toggle Language">
+            <span class="lang-option" [class.active]="currentLang === 'en'">English</span>
+            <span class="lang-divider">|</span>
+            <span class="lang-option cairo-font-force" [class.active]="currentLang === 'ar'">العربية</span>
+        </button>
     </div>
 </div>

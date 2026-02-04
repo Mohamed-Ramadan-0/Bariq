@@ -14,7 +14,7 @@ header {
 
     // Scrolled state - add solid background
     &.scrolled {
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
@@ -53,6 +53,10 @@ header {
             height: 35px;
         }
     }
+}
+
+.cairo-font-force {
+    font-family: 'Cairo', sans-serif !important;
 }
 
 /* Desktop Navigation */
@@ -208,22 +212,23 @@ header {
     }
 }
 
-/* Mobile Fullscreen Overlay */
+/* Mobile Fullscreen Overlay - Always LTR for consistent layout */
 .mobile-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--color-bg-main); // Or secondary, depending on design
-    z-index: 1001; // Below hamburger (1002)
+    background-color: var(--color-bg-main);
+    z-index: 1001;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease-in-out;
-    transform: scale(0.95); // Subtle zoom effect
+    transform: scale(0.95);
+    direction: ltr; // Keep menu centered regardless of language
 
     &.open {
         opacity: 1;
@@ -236,6 +241,9 @@ header {
         max-width: 600px;
         padding: 2rem;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -309,4 +317,41 @@ header {
 
 .accordion-btn.expanded .arrow {
     transform: rotate(180deg);
+}
+
+/* Mobile Language Toggle */
+.mobile-lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: var(--color-primary);
+        background: rgba(205, 175, 90, 0.1);
+    }
+
+    .lang-option {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--color-text-muted);
+        transition: color 0.3s ease;
+
+        &.active {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+    }
+
+    .lang-divider {
+        color: var(--color-border);
+        font-weight: 300;
+    }
 }
