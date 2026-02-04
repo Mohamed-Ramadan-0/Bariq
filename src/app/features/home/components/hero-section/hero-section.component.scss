@@ -10,19 +10,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible; // Allow fixed child to be visible
+    z-index: 1;
+
+    // Angled Black Overlay (Reversed angle)
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        clip-path: polygon(0 100%, 100% 100%, 100% 95%, 0 83%);
+        z-index: 2;
+        pointer-events: none;
+
+        @include mobile {
+            // Adjust angle for mobile
+            clip-path: polygon(0 100%, 100% 100%, 100% 95%, 0 85%);
+        }
+    }
 }
 
-// Background Image - Fixed for Parallax Effect
+// Background Image - Absolute with Horizontal Scroll Parallax
 .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
 
     // Force app-img to fill entire container
     app-img {
@@ -37,15 +57,19 @@
         width: 100% !important;
         height: 100% !important;
         aspect-ratio: unset !important;
+        overflow: hidden;
     }
 
     .app-image {
-        width: 100% !important;
+        width: 100% !important; // Extra width for parallax movement
         height: 100% !important;
-        min-width: 100vw;
         min-height: 100vh;
         object-fit: cover !important;
-        object-position: center center;
+        object-position: bottom center; // Anchor to bottom, crop from top
+        transform: scale(1.1); // Room for horizontal movement
+        transform-origin: center bottom;
+        will-change: transform;
+        transition: transform 0.1s linear; // Smooth parallax
     }
 }
 
@@ -66,7 +90,7 @@
 // Content
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10; // Above the white angled overlay
     text-align: center;
     padding: 0 1rem;
     max-width: 900px;

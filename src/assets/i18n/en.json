@@ -18,13 +18,20 @@
     "TITLE": "Featured Projects",
     "SUBTITLE": "Discover our latest work",
     "VIEW_ALL": "View All Projects",
-    "VIEW_PROJECT": "View Project"
+    "VIEW_PROJECT": "View Project",
+    "SCROLL_HINT": "Scroll",
+    "CATEGORIES": {
+      "FACADES": "Facades",
+      "WAYFINDING": "Wayfinding",
+      "3D_LETTERS": "3D Letters"
+    }
   },
   "LEAD_MAGNET": {
     "TITLE": "2026 Material Specs Guide",
     "SUBTITLE": "Get exclusive access to our comprehensive guide on the latest fire-resistant materials and industry standards",
     "PLACEHOLDER": "Enter your email",
-    "CTA": "Download Free Guide"
+    "CTA": "Download Free Guide",
+    "SUCCESS": "Check your inbox! Guide sent successfully."
   },
   "CONTACT": {
     "TITLE": "Get in Touch",
@@ -34,7 +41,8 @@
       "EMAIL": "Email Address",
       "SUBJECT": "Subject",
       "MESSAGE": "Your Message",
-      "SUBMIT": "Send Message"
+      "SUBMIT": "Send Message",
+      "SENDING": "Sending..."
     },
     "INFO": {
       "TITLE": "Contact Information",
@@ -45,6 +53,10 @@
       "PHONE_2": "+966 50 123 4567",
       "EMAIL": "info@bariqarabia.com",
       "ADDRESS": "King Fahd Road, Riyadh, Saudi Arabia"
+    },
+    "SUCCESS": {
+      "TITLE": "Message Sent!",
+      "MESSAGE": "Thank you for reaching out. We'll get back to you soon."
     }
   }
 }

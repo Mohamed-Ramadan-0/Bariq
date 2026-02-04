@@ -22,13 +22,15 @@ export class MainLayoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Set default language and use it
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+
+    // Update direction and lang attributes when language changes
     this.translate.onLangChange.subscribe((event) => {
       const dir = event.lang === 'ar' ? 'rtl' : 'ltr';
       this.renderer.setAttribute(this.document.documentElement, 'dir', dir);
       this.renderer.setAttribute(this.document.documentElement, 'lang', event.lang);
     });
-
-    // Initialize with default if not already set (optional, dependent on app config, but good practice)
-    // this.translate.setDefaultLang('en'); // Usually done in AppConfig or AppComponent
   }
 }

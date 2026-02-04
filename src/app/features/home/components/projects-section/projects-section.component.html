@@ -28,7 +28,7 @@
                         <div class="blueprint-overlay">
                             <div class="grid-pattern"></div>
                             <div class="overlay-content">
-                                <span class="category">{{ project.category }}</span>
+                                <span class="category">{{ getCategory(project.category) }}</span>
                                 <a [routerLink]="['/portfolio', project.id]" class="view-btn">
                                     {{ 'PROJECTS.VIEW_PROJECT' | translate }}
                                 </a>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-client">{{ getClient(project) }}</h3>
-                        <span class="project-category">{{ project.category }}</span>
+                        <span class="project-category">{{ getCategory(project.category) }}</span>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
-            <span>Scroll</span>
+            <span>{{ 'PROJECTS.SCROLL_HINT' | translate }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>

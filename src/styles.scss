@@ -24,8 +24,11 @@
     --container-width: 1320px;
     --header-height: 80px;
 
-    /* Font Family */
-    --font-main: 'Cairo', sans-serif;
+    /* Typography - Industrial Luxury Fonts */
+    --font-ar: 'Cairo', sans-serif;
+    --font-en: 'Titillium Web', sans-serif;
+    --font-main: var(--font-en);
+    /* Default fallback */
 }
 
 /* Typography Scaling */
@@ -34,15 +37,120 @@ html {
 
     @include mobile {
         font-size: 14px;
-        /* Scale down text slightly on mobile */
     }
 }
 
+/* Base Body Styles */
 body {
     background-color: var(--color-bg-main);
     color: var(--color-text-main);
-    font-family: var(--font-main);
+    font-family: var(--font-en);
+    /* Default to English font */
     margin: 0;
     overflow-x: hidden;
-    /* Prevent horizontal scroll */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smart Language-Based Font Switching */
+html[lang='ar'] body,
+body:lang(ar) {
+    font-family: var(--font-ar);
+    direction: rtl;
+}
+
+html[lang='en'] body,
+body:lang(en) {
+    font-family: var(--font-en);
+    direction: ltr;
+}
+
+/* Global Typography - Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    color: var(--color-text-main);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+/* Paragraph & Text */
+p {
+    font-family: inherit;
+    margin: 0 0 1rem;
+    line-height: 1.7;
+}
+
+/* Links */
+a {
+    font-family: inherit;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--color-primary-hover);
+    }
+}
+
+/* Buttons & Inputs inherit font */
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--color-primary);
+    color: var(--color-bg-main);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-hover);
 }

@@ -32,4 +32,13 @@ export class ProjectsSectionComponent {
     getClient(project: Project): string {
         return this.currentLang === 'ar' ? project.clientAr : project.clientEn;
     }
+
+    getCategory(category: string): string {
+        const categoryMap: { [key: string]: string } = {
+            'Facades': this.currentLang === 'ar' ? 'واجهات' : 'Facades',
+            'Wayfinding': this.currentLang === 'ar' ? 'أنظمة توجيه' : 'Wayfinding',
+            '3D Letters': this.currentLang === 'ar' ? 'حروف بارزة' : '3D Letters'
+        };
+        return categoryMap[category] || category;
+    }
 }

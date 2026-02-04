@@ -1,6 +1,6 @@
 @import '../../../styles/mixins';
 
-/* Header Styles */
+/* Header Styles - Always LTR regardless of page language */
 header {
     position: fixed;
     top: 0;
@@ -10,6 +10,7 @@ header {
     z-index: 1000;
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
     background-color: transparent;
+    direction: ltr; // Keep header always LTR
 
     // Scrolled state - add solid background
     &.scrolled {
@@ -21,15 +22,6 @@ header {
     &.mobile-open {
         z-index: 1002;
         background-color: transparent;
-    }
-
-    // On mobile/tablet, keep transparent initially but show on scroll
-    @include tablet {
-        // Keep transparent on tablet too for hero effect
-    }
-
-    @include mobile {
-        // Keep transparent on mobile too for hero effect
     }
 }
 
@@ -130,6 +122,44 @@ header {
     left: -200px;
     /* Rough centering */
     transform: translateY(10px);
+}
+
+/* Language Toggle Button - Inside Nav */
+.lang-toggle-item {
+    margin-left: 1rem;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: var(--color-primary);
+        background: rgba(205, 175, 90, 0.1);
+    }
+
+    .lang-option {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-text-muted);
+        transition: color 0.3s ease;
+
+        &.active {
+            color: var(--color-primary);
+        }
+    }
+
+    .lang-divider {
+        color: var(--color-border);
+        font-weight: 300;
+    }
 }
 
 /* Mobile Menu Toggle (Hamburger) */

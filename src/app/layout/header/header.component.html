@@ -29,8 +29,16 @@
                     <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
                     <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
                     <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                    <li class="lang-toggle-item">
+                        <button class="lang-toggle" (click)="toggleLanguage()" aria-label="Toggle Language">
+                            <span class="lang-option" [class.active]="currentLang === 'en'">EN</span>
+                            <span class="lang-divider">|</span>
+                            <span class="lang-option" [class.active]="currentLang === 'ar'">ع</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
+
 
             <!-- Mobile Menu Toggle -->
             <button class="hamburger-btn" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()"

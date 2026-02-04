@@ -27,7 +27,7 @@
 }
 
 .title {
-    font-family: var(--font-main);
+    font-family: inherit;
     font-weight: 700;
     color: var(--color-primary);
     margin: 0 0 0.5rem;
@@ -42,7 +42,7 @@
 }
 
 .subtitle {
-    font-family: var(--font-main);
+    font-family: inherit;
     font-weight: 400;
     color: var(--color-text-muted);
     margin: 0;

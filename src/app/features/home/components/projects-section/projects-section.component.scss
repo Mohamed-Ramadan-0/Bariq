@@ -1,6 +1,8 @@
 @import '../../../../../styles/mixins';
 
 .projects-section {
+    position: relative;
+    z-index: 1;
     background-color: var(--color-bg-main);
     padding: 6rem 0;
 }
