@@ -12,23 +12,24 @@
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul class="nav-list">
-                    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{
+                            'NAV.HOME' | translate }}</a>
                     </li>
                     <li class="has-mega-menu">
-                        <a routerLink="/services" routerLinkActive="active">Services</a>
+                        <a routerLink="/services" routerLinkActive="active">{{ 'NAV.SERVICES' | translate }}</a>
                         <div class="mega-menu">
                             <div class="mega-menu-content">
                                 <!-- Mega Menu Content Placeholder -->
-                                <div class="service-item">Service 1</div>
+                                <div class="service-item">{{ 'NAV.SERVICE_1' | translate }}</div>
                                 <div class="service-item">Service 2</div>
                                 <div class="service-item">Service 3</div>
                                 <div class="service-item">Service 4</div>
                             </div>
                         </div>
                     </li>
-                    <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
-                    <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
-                    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                    <li><a routerLink="/portfolio" routerLinkActive="active">{{ 'NAV.PORTFOLIO' | translate }}</a></li>
+                    <li><a routerLink="/blog" routerLinkActive="active">{{ 'NAV.BLOG' | translate }}</a></li>
+                    <li><a routerLink="/contact" routerLinkActive="active">{{ 'NAV.CONTACT' | translate }}</a></li>
                     <li class="lang-toggle-item">
                         <button class="lang-toggle" (click)="toggleLanguage()" aria-label="Toggle Language">
                             <span class="lang-option" [class.active]="currentLang === 'en'">EN</span>
@@ -56,21 +57,24 @@
     <div class="overlay-content">
         <ul class="mobile-nav-list">
             <li><a routerLink="/" (click)="toggleMobileMenu()" routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                    [routerLinkActiveOptions]="{exact: true}">{{ 'NAV.HOME' | translate }}</a></li>
             <li>
                 <button class="accordion-btn" (click)="toggleServices()" [ngClass]="{'expanded': isServicesExpanded}">
-                    Services
+                    {{ 'NAV.SERVICES' | translate }}
                     <span class="arrow">&#9662;</span>
                 </button>
                 <div class="accordion-content" [ngClass]="{'expanded': isServicesExpanded}">
                     <!-- Example Sub-items -->
-                    <a routerLink="/services" (click)="toggleMobileMenu()">All Services</a>
-                    <a routerLink="/services/s1" (click)="toggleMobileMenu()">Service 1</a>
+                    <a routerLink="/services" (click)="toggleMobileMenu()">{{ 'NAV.ALL_SERVICES' | translate }}</a>
+                    <a routerLink="/services/s1" (click)="toggleMobileMenu()">{{ 'NAV.SERVICE_1' | translate }}</a>
                 </div>
             </li>
-            <li><a routerLink="/portfolio" (click)="toggleMobileMenu()" routerLinkActive="active">Portfolio</a></li>
-            <li><a routerLink="/blog" (click)="toggleMobileMenu()" routerLinkActive="active">Blog</a></li>
-            <li><a routerLink="/contact" (click)="toggleMobileMenu()" routerLinkActive="active">Contact</a></li>
+            <li><a routerLink="/portfolio" (click)="toggleMobileMenu()" routerLinkActive="active">{{ 'NAV.PORTFOLIO' |
+                    translate }}</a></li>
+            <li><a routerLink="/blog" (click)="toggleMobileMenu()" routerLinkActive="active">{{ 'NAV.BLOG' | translate
+                    }}</a></li>
+            <li><a routerLink="/contact" (click)="toggleMobileMenu()" routerLinkActive="active">{{ 'NAV.CONTACT' |
+                    translate }}</a></li>
         </ul>
 
         <!-- Mobile Language Toggle -->

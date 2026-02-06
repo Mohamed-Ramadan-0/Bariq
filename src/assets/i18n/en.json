@@ -58,5 +58,41 @@
       "TITLE": "Message Sent!",
       "MESSAGE": "Thank you for reaching out. We'll get back to you soon."
     }
+  },
+  "FOOTER": {
+    "BRAND_DESC": "Empowering your vision with premium cladding, signage & facade solutions.",
+    "QUICK_LINKS": "Quick Links",
+    "SERVICES": "Services",
+    "CONTACT": "Contact Us",
+    "LINKS": {
+      "ABOUT": "About Us",
+      "PORTFOLIO": "Portfolio",
+      "BLOG": "Blog",
+      "CAREERS": "Careers"
+    },
+    "SERVICE_LINKS": {
+      "CLADDING": "Cladding & Facades",
+      "LETTERS": "3D Letters",
+      "WAYFINDING": "Wayfinding Systems",
+      "SIGNAGE": "Signage Solutions"
+    },
+    "INFO": {
+      "EMAIL_LABEL": "Email:",
+      "PHONE_LABEL": "Phone:",
+      "ADDRESS_LABEL": "Address:",
+      "EMAIL": "info@bariqarabia.com",
+      "PHONE": "+966 12 345 6789",
+      "ADDRESS": "King Fahd Road, Riyadh, Saudi Arabia"
+    },
+    "COPYRIGHT": "Bariq Arabia. All rights reserved."
+  },
+  "NAV": {
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "BLOG": "Blog",
+    "CONTACT": "Contact",
+    "ALL_SERVICES": "All Services",
+    "SERVICE_1": "Service 1"
   }
 }

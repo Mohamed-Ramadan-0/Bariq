@@ -42,7 +42,7 @@
 // Connecting Line
 .connecting-line {
     position: absolute;
-    inset-inline-start: 50%;
+    left: 50%; // Use physical left for proper centering
     top: 0;
     width: 2px;
     height: 0;
@@ -53,7 +53,7 @@
     transition: height 1.5s ease-out;
 
     @include mobile {
-        inset-inline-start: 1.5rem;
+        left: 1.5rem;
         transform: none;
     }
 }
@@ -117,7 +117,7 @@
 // Line Node (the dot on the connecting line)
 .line-node {
     position: absolute;
-    inset-inline-start: 50%;
+    left: 50%; // Use physical left for proper centering with transform
     top: 50%;
     width: 16px;
     height: 16px;
@@ -128,8 +128,8 @@
     z-index: 2;
 
     @include mobile {
-        inset-inline-start: 1.5rem;
-        transform: translate(-50%, -50%);
+        left: 1.5rem;
+        transform: translateY(-50%);
     }
 }
 
