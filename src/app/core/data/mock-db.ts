@@ -113,3 +113,29 @@ export const PROJECTS: Project[] = [
         img: 'project-4.jpg'
     }
 ];
+
+export interface Client {
+    name: string;
+    logo: string;
+}
+
+export const CLIENTS: Client[] = [
+    { name: 'Client 1', logo: 'client-1.png' },
+    { name: 'Client 2', logo: 'client-2.png' },
+    { name: 'Client 3', logo: 'client-3.png' },
+    { name: 'Client 4', logo: 'client-4.png' },
+    { name: 'Client 5', logo: 'client-5.png' },
+    { name: 'Client 6', logo: 'client-6.png' },
+    { name: 'Client 7', logo: 'client-7.png' },
+    { name: 'Client 8', logo: 'client-8.png' },
+    { name: 'Client 9', logo: 'client-9.png' },
+    { name: 'Client 10', logo: 'client-10.png' },
+    { name: 'Client 11', logo: 'client-11.png' },
+    { name: 'Client 12', logo: 'client-12.png' },
+    { name: 'Client 13', logo: 'client-13.png' },
+    { name: 'Client 14', logo: 'client-14.png' },
+    { name: 'Client 15', logo: 'client-15.png' },
+    { name: 'Client 16', logo: 'client-16.png' },
+    { name: 'Client 17', logo: 'client-17.png' }
+
+];

@@ -1,0 +1,20 @@
+<section class="clients-section">
+    <div class="container">
+        <h2 class="section-title">{{ 'CLIENTS.TITLE' | translate }}</h2>
+    </div>
+
+    <!-- Marquee Wrapper -->
+    <div class="marquee-wrapper">
+        <!-- Track - logos repeated twice for seamless loop -->
+        <div class="marquee-track">
+            <!-- First set of logos -->
+            <div class="logo-item" *ngFor="let client of clients">
+                <app-img [path]="client.logo" [alt]="client.name" [height]="60" containerClass="client-logo"></app-img>
+            </div>
+            <!-- Second set of logos (duplicate for infinite loop) -->
+            <div class="logo-item" *ngFor="let client of clients">
+                <app-img [path]="client.logo" [alt]="client.name" [height]="60" containerClass="client-logo"></app-img>
+            </div>
+        </div>
+    </div>
+</section>

@@ -52,8 +52,15 @@
     transform: translateX(-50%);
     transition: height 1.5s ease-out;
 
+    @include tablet {
+        left: auto;
+        inset-inline-start: 1.5rem; // Flips to right in RTL
+        transform: none;
+    }
+
     @include mobile {
-        left: 1.5rem;
+        left: auto;
+        inset-inline-start: 1.5rem; // Flips to right in RTL
         transform: none;
     }
 }
@@ -89,6 +96,7 @@
     @include tablet {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding-inline-start: 3rem; // Add padding to prevent content overlapping line
 
         &.reverse {
 
@@ -117,7 +125,7 @@
 // Line Node (the dot on the connecting line)
 .line-node {
     position: absolute;
-    left: 50%; // Use physical left for proper centering with transform
+    left: 50%;
     top: 50%;
     width: 16px;
     height: 16px;
@@ -127,9 +135,29 @@
     transform: translate(-50%, -50%);
     z-index: 2;
 
+    @include tablet {
+        left: auto;
+        inset-inline-start: 1.5rem;
+        transform: translate(-50%, -50%);
+    }
+
     @include mobile {
-        left: 1.5rem;
-        transform: translateY(-50%);
+        left: auto;
+        inset-inline-start: 1.5rem;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// RTL fix for line-node - flip translateX
+:host-context([dir="rtl"]) {
+    .line-node {
+        @include tablet {
+            transform: translate(50%, -50%);
+        }
+
+        @include mobile {
+            transform: translate(50%, -50%);
+        }
     }
 }
 

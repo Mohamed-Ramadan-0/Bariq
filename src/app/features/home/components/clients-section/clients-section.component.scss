@@ -1,0 +1,140 @@
+@import '../../../../../styles/mixins';
+
+.clients-section {
+    padding: 6rem 0;
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+// Marquee Wrapper with gradient masks
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    // Gradient fade effect at edges
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+// The scrolling track
+.marquee-track {
+    display: flex;
+    gap: 4rem;
+    width: fit-content;
+    animation: scroll-ltr 25s linear infinite;
+
+    // Pause on hover
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+// Individual logo item
+.logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    min-width: 150px;
+
+    ::ng-deep .client-logo {
+        height: 60px;
+        width: auto;
+        filter: grayscale(100%) opacity(0.6);
+        transition: all 0.3s ease;
+
+        img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+    }
+
+    &:hover ::ng-deep .client-logo {
+        filter: grayscale(0%) opacity(1);
+        transform: scale(1.05);
+    }
+}
+
+// Keyframes for LTR scrolling - moves left
+@keyframes scroll-ltr {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 2rem)); // half of track + gap adjustment
+    }
+}
+
+// RTL: Reverse the animation direction - moves right
+:host-context([dir="rtl"]) {
+    .marquee-track {
+        animation-name: scroll-rtl;
+        // Ensure flex direction is correct for RTL visual
+        flex-direction: row-reverse;
+    }
+}
+
+@keyframes scroll-rtl {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(50% + 2rem)); // positive = moves right
+    }
+}
+
+// Responsive adjustments
+@include tablet {
+    .clients-section {
+        padding: 4rem 0;
+    }
+
+    .marquee-track {
+        gap: 3rem;
+    }
+
+    .logo-item {
+        padding: 0.75rem 1.5rem;
+        min-width: 120px;
+
+        ::ng-deep .client-logo {
+            height: 50px;
+        }
+    }
+}
+
+@include mobile {
+    .clients-section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .marquee-track {
+        gap: 2rem;
+        animation-duration: 18s;
+    }
+
+    .logo-item {
+        padding: 0.5rem 1rem;
+        min-width: 100px;
+
+        ::ng-deep .client-logo {
+            height: 40px;
+        }
+    }
+}
