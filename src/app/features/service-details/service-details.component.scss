@@ -1,0 +1,341 @@
+@import '../../../styles/mixins';
+
+// Hero Section
+.hero-section {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    ::ng-deep .hero-image {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.8) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+// Overview Section (ZigZag)
+.overview-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-primary);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.overview-text {
+    .section-title {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: var(--color-text-primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .overview-desc {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--color-text-secondary);
+    }
+}
+
+.overview-image {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    ::ng-deep .zigzag-image {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}
+
+// RTL: Flip zigzag layout
+:host-context([dir="rtl"]) {
+    .overview-grid {
+        direction: rtl;
+    }
+}
+
+// Technical Specs Section
+.specs-section {
+    padding: 5rem 0;
+    background-color: var(--color-bg-secondary);
+
+    .section-title {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: var(--color-text-primary);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.spec-card {
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(var(--color-primary-rgb), 0.2);
+    }
+}
+
+.spec-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.spec-value {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+// Execution Process Section
+.process-section {
+    padding: 5rem 0;
+    background-color: var(--color-bg-primary);
+
+    .section-title {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: var(--color-text-primary);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+}
+
+.process-timeline {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+
+    @include tablet {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+    padding: 0 1rem;
+
+    @include tablet {
+        flex-direction: row;
+        max-width: 100%;
+        padding: 1rem 0;
+        gap: 1.5rem;
+    }
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-bg-primary);
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(var(--color-primary-rgb), 0.3);
+
+    @include tablet {
+        margin-bottom: 0;
+    }
+}
+
+.step-content {
+    text-align: center;
+
+    @include tablet {
+        text-align: start;
+        flex: 1;
+    }
+}
+
+.step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.step-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.step-connector {
+    position: absolute;
+    top: 30px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), transparent);
+    z-index: 0;
+
+    @include tablet {
+        top: auto;
+        right: auto;
+        left: 30px;
+        bottom: -10px;
+        width: 2px;
+        height: 20px;
+        background: linear-gradient(180deg, var(--color-primary), transparent);
+    }
+}
+
+// RTL connector
+:host-context([dir="rtl"]) {
+    .step-connector {
+        right: auto;
+        left: -50%;
+        background: linear-gradient(270deg, var(--color-primary), transparent);
+
+        @include tablet {
+            left: auto;
+            right: 30px;
+        }
+    }
+}
+
+// CTA Strip
+.cta-strip {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--color-primary);
+    z-index: 100;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @include mobile {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.cta-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    color: var(--color-bg-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.3);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(var(--color-primary-rgb), 0.4);
+    }
+}
+
+// Mobile adjustments
+@include mobile {
+    .hero-section {
+        height: 40vh;
+        min-height: 300px;
+    }
+
+    .overview-section,
+    .specs-section,
+    .process-section {
+        padding: 3rem 0;
+    }
+
+    .spec-card {
+        padding: 1rem;
+    }
+}

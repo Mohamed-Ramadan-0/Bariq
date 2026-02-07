@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { STATS, SERVICES, PROJECTS, Stat, Service, Project } from '../data/mock-db';
+import { STATS, SERVICES, PROJECTS, DETAILED_SERVICES, Stat, Service, Project, DetailedService } from '../data/mock-db';
 
 @Injectable({
     providedIn: 'root'
@@ -24,5 +24,14 @@ export class MockDataService {
 
     getProjectById(id: number): Project | undefined {
         return PROJECTS.find(p => p.id === id);
+    }
+
+    // Detailed Services for Service Details Page
+    getAllDetailedServices(): DetailedService[] {
+        return DETAILED_SERVICES;
+    }
+
+    getServiceBySlug(slug: string): DetailedService | undefined {
+        return DETAILED_SERVICES.find(service => service.slug === slug);
     }
 }

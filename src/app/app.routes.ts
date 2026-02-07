@@ -10,7 +10,10 @@ export const routes: Routes = [
                 path: '',
                 loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
             },
-            // { path: 'services', component: ServicesComponent }, // To be implemented
+            {
+                path: 'services/:slug',
+                loadComponent: () => import('./features/service-details/service-details.component').then(m => m.ServiceDetailsComponent)
+            },
             // { path: 'portfolio', component: PortfolioComponent }, // To be implemented
         ]
     }

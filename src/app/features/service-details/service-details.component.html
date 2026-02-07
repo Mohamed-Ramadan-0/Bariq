@@ -1,0 +1,70 @@
+<div class="service-details" *ngIf="service">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg">
+            <app-img [path]="service.hero_img" [alt]="getLocalized(service.title_en, service.title_ar)"
+                containerClass="hero-image"></app-img>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="hero-title">{{ getLocalized(service.title_en, service.title_ar) }}</h1>
+        </div>
+    </section>
+
+    <!-- Overview Section (ZigZag) -->
+    <section class="overview-section">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <h2 class="section-title">{{ 'SERVICE_DETAILS.OVERVIEW' | translate }}</h2>
+                    <p class="overview-desc">{{ getLocalized(service.overview_en, service.overview_ar) }}</p>
+                </div>
+                <div class="overview-image">
+                    <app-img [path]="service.overview_img"
+                        [alt]="getLocalized(service.title_en, service.title_ar) + ' overview'"
+                        containerClass="zigzag-image"></app-img>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs Section -->
+    <section class="specs-section">
+        <div class="container">
+            <h2 class="section-title">{{ 'SERVICE_DETAILS.SPECS' | translate }}</h2>
+            <div class="specs-grid">
+                <div class="spec-card" *ngFor="let spec of service.specs">
+                    <div class="spec-label">{{ getLocalized(spec.label_en, spec.label_ar) }}</div>
+                    <div class="spec-value">{{ getLocalized(spec.value_en, spec.value_ar) }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Execution Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">{{ 'SERVICE_DETAILS.PROCESS' | translate }}</h2>
+            <div class="process-timeline">
+                <div class="process-step" *ngFor="let step of service.steps; let last = last">
+                    <div class="step-number">{{ step.step_num }}</div>
+                    <div class="step-content">
+                        <h3 class="step-title">{{ getLocalized(step.title_en, step.title_ar) }}</h3>
+                        <p class="step-desc">{{ getLocalized(step.desc_en, step.desc_ar) }}</p>
+                    </div>
+                    <div class="step-connector" *ngIf="!last"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="cta-strip">
+        <div class="container cta-content">
+            <span class="cta-text">{{ 'SERVICE_DETAILS.CTA_TEXT' | translate }}</span>
+            <a routerLink="/contact" class="cta-button">
+                {{ 'SERVICE_DETAILS.CTA_BUTTON' | translate }}
+            </a>
+        </div>
+    </section>
+</div>

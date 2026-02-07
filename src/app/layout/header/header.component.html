@@ -16,14 +16,13 @@
                             'NAV.HOME' | translate }}</a>
                     </li>
                     <li class="has-mega-menu">
-                        <a routerLink="/services" routerLinkActive="active">{{ 'NAV.SERVICES' | translate }}</a>
+                        <span class="nav-link-trigger">{{ 'NAV.SERVICES' | translate }}</span>
                         <div class="mega-menu">
                             <div class="mega-menu-content">
-                                <!-- Mega Menu Content Placeholder -->
-                                <div class="service-item">{{ 'NAV.SERVICE_1' | translate }}</div>
-                                <div class="service-item">Service 2</div>
-                                <div class="service-item">Service 3</div>
-                                <div class="service-item">Service 4</div>
+                                <a *ngFor="let service of services" [routerLink]="['/services', service.slug]"
+                                    class="service-item" routerLinkActive="active">
+                                    {{ getLocalizedTitle(service) }}
+                                </a>
                             </div>
                         </div>
                     </li>
@@ -64,9 +63,10 @@
                     <span class="arrow">&#9662;</span>
                 </button>
                 <div class="accordion-content" [ngClass]="{'expanded': isServicesExpanded}">
-                    <!-- Example Sub-items -->
-                    <a routerLink="/services" (click)="toggleMobileMenu()">{{ 'NAV.ALL_SERVICES' | translate }}</a>
-                    <a routerLink="/services/s1" (click)="toggleMobileMenu()">{{ 'NAV.SERVICE_1' | translate }}</a>
+                    <a *ngFor="let service of services" [routerLink]="['/services', service.slug]"
+                        (click)="toggleMobileMenu()" routerLinkActive="active">
+                        {{ getLocalizedTitle(service) }}
+                    </a>
                 </div>
             </li>
             <li><a routerLink="/portfolio" (click)="toggleMobileMenu()" routerLinkActive="active">{{ 'NAV.PORTFOLIO' |

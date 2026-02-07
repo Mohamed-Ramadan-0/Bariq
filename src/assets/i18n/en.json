@@ -97,5 +97,12 @@
   },
   "CLIENTS": {
     "TITLE": "Partners in Success"
+  },
+  "SERVICE_DETAILS": {
+    "OVERVIEW": "Overview",
+    "SPECS": "Technical Specifications",
+    "PROCESS": "Our Execution Process",
+    "CTA_TEXT": "Ready to start your project?",
+    "CTA_BUTTON": "Request a Quote"
   }
 }

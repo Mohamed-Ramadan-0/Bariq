@@ -94,7 +94,7 @@ header {
             &.has-mega-menu:hover .mega-menu {
                 opacity: 1;
                 visibility: visible;
-                transform: translateY(0);
+                transform: translateX(-50%) translateY(0);
             }
         }
     }
@@ -104,28 +104,72 @@ header {
 .mega-menu {
     position: absolute;
     top: 100%;
-    /* Below the nav item */
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    width: 100vw;
-    /* Full width relative to viewport, tricky with relative parent but let's try fixed or simple container absolute */
-    max-width: var(--container-width);
-    background-color: var(--color-bg-secondary);
-    border-top: 2px solid var(--color-primary);
-    padding: 2rem;
+    min-width: 280px;
+    background-color: #111;
+    border: 1px solid var(--color-primary);
+    border-radius: 0;
+    padding: 1rem 1.5rem;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1001;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 
-    /* Centering adjustment override for full width feel usually requires position static on LI and generic handling */
-    /* For simplicity, let's keep it relative to parent LI but wide */
-    width: 600px;
-    /* Simplified for now */
-    left: -200px;
-    /* Rough centering */
-    transform: translateY(10px);
+    .mega-menu-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-item {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+        text-align: left;
+
+        &:hover {
+            background-color: rgba(var(--color-primary-rgb), 0.1);
+            color: var(--color-primary);
+            border-left-color: var(--color-primary);
+        }
+
+        &.active {
+            color: var(--color-primary);
+            background-color: rgba(var(--color-primary-rgb), 0.05);
+        }
+    }
+}
+
+/* RTL Support for Mega Menu */
+:host-context([dir="rtl"]) {
+    .mega-menu .service-item {
+        text-align: right;
+        border-left: none;
+        border-right: 3px solid transparent;
+
+        &:hover {
+            border-right-color: var(--color-primary);
+        }
+    }
+}
+
+/* Nav link trigger (non-clickable) */
+.nav-link-trigger {
+    color: var(--color-text-main);
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--color-primary);
+    }
 }
 
 /* Language Toggle Button - Inside Nav */
