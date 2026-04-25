@@ -237,9 +237,11 @@
 
     :host ::ng-deep .service-img {
         width: 100%;
+        aspect-ratio: 4 / 3;
 
         .img-container {
             width: 100% !important;
+            height: 100% !important;
             border-radius: 12px;
         }
 

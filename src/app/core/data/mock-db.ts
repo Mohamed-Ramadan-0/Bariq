@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
         titleEn: 'Cladding & Facades',
         descAr: 'حلول واجهات مقاومة للحريق بأعلى معايير الجودة. نستخدم مواد معتمدة عالمياً تضمن السلامة والمتانة لسنوات طويلة.',
         descEn: 'Fire-resistant facade solutions with the highest quality standards. We use globally certified materials that ensure safety and durability for years.',
-        img: 'service-cladding.jpg',
+        img: 'Faced.jpg',
         icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'
     },
     {
@@ -69,7 +69,7 @@ export const SERVICES: Service[] = [
         titleEn: '3D Letters',
         descAr: 'دقة قص ليزر 0.1 مم مع تشطيبات متعددة: ستانلس ستيل، أكريليك مضيء، نحاس. تصميم وتنفيذ احترافي.',
         descEn: '0.1mm laser precision with multiple finishes: stainless steel, illuminated acrylic, brass. Professional design and execution.',
-        img: 'service-letters.jpg',
+        img: 'faced1.jpg',
         icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
     },
     {
@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
         titleEn: 'Wayfinding Systems',
         descAr: 'لافتات داخلية وخارجية متكاملة. تصميم يراعي تجربة المستخدم ويسهل التنقل في المنشآت الكبيرة.',
         descEn: 'Integrated indoor & outdoor signage. User-experience focused design that facilitates navigation in large facilities.',
-        img: 'service-wayfinding.jpg',
+        img: 'wayfinding.jpg',
         icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7'
     }
 ];
@@ -89,28 +89,28 @@ export const PROJECTS: Project[] = [
         clientAr: 'البنك الأهلي',
         clientEn: 'NBE Bank',
         category: 'Facades',
-        img: 'project-1.jpg'
+        img: 'saudi-national-bank.png'
     },
     {
         id: 2,
         clientAr: 'مستشفى السعودي الألماني',
         clientEn: 'SGH Hospital',
         category: 'Wayfinding',
-        img: 'project-2.jpg'
+        img: 'Saudi-German-hospital.png'
     },
     {
         id: 3,
         clientAr: 'مول الرياض بارك',
         clientEn: 'Riyadh Park Mall',
         category: '3D Letters',
-        img: 'project-3.jpg'
+        img: 'alRyadh-park.png'
     },
     {
         id: 4,
         clientAr: 'فندق الفيصلية',
         clientEn: 'Al Faisaliah Hotel',
         category: 'Facades',
-        img: 'project-4.jpg'
+        img: 'Alfisaliah-hotel.png'
     }
 ];
 
@@ -173,12 +173,12 @@ export const DETAILED_SERVICES: DetailedService[] = [
     {
         id: 1,
         slug: 'construction-hoarding',
-        hero_img: 'service-hoarding-hero.jpg',
+        hero_img: 'Hero_Section_hording1.jpg',
         title_en: 'Construction Hoarding',
         title_ar: 'أسوار المشاريع الإعلانية (Hoarding)',
         overview_en: 'Turn your construction site into a marketing asset. Our hoarding solutions combine structural integrity with high-impact graphics. We use heavy-duty steel structures clad with premium ACP or marine plywood, ensuring safety and brand visibility even in harsh weather conditions.',
         overview_ar: 'حول موقع الإنشاءات الخاص بك إلى واجهة تسويقية. نجمع بين المتانة الهيكلية وجودة الطباعة الفائقة. نستخدم هياكل حديدية مدعمة مع ألواح الألمنيوم (ACP) أو الخشب المعالج، لضمان السلامة ومقاومة الرياح مع إظهار هوية مشروعك بأفضل صورة.',
-        overview_img: 'service-hoarding-overview.jpg',
+        overview_img: 's4.jpg',
         specs: [
             { label_en: 'Structure', label_ar: 'الهيكل', value_en: 'Galvanized Steel Tubes (40x40 / 80x40)', value_ar: 'تيوبات حديد مجلفن' },
             { label_en: 'Cladding', label_ar: 'التجاليد', value_en: 'ACP (4mm) or Marine Plywood (18mm)', value_ar: 'كلادينج 4مم أو خشب 18مم' },
